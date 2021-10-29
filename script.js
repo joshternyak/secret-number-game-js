@@ -1,7 +1,10 @@
 'use strict';
 
-const secretNumberVal = Math.trunc(Math.random() * 20) + 1;
-let secretNumber = secretNumberVal;
+function createSecretNumber() {
+  return Math.trunc(Math.random() * 20) + 1;
+}
+
+let secretNumber = createSecretNumber();
 let score = 20;
 let highScore = 0;
 
@@ -48,7 +51,7 @@ checkEl.addEventListener('click', function () {
 
 againEl.addEventListener('click', function () {
   score = 20;
-  secretNumber = secretNumberVal;
+  secretNumber = createSecretNumber();
   messageEl.textContent = 'Start guessing...';
   numberEl.textContent = '?';
   scoreEl.textContent = score;
